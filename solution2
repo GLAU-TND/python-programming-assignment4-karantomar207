@@ -1,0 +1,14 @@
+c=eval(input())
+def new(m):
+  try:
+    for k in m:
+      if type(m[k])==type({}):
+        for i in m[k]:
+          m[k+i]=m[k][i]
+        m.pop(k)
+        new(m)
+    else:
+      print(m)
+  except RuntimeError:
+    pass
+new(c)
